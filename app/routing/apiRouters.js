@@ -11,6 +11,8 @@ module.exports = function(app) {
 
     app.get("/api/friends", function(request, response) {
       response.json(friends);
+      console.log(friends.friendsArray);
+      console.log(friends);
     });
 
     app.post("/api/friends", function(request, response) {
