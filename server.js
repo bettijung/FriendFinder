@@ -12,13 +12,15 @@ const app = express();
 var PORT = process.env.PORT || 8080;
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
+app.use("/static", express.static(path.join(__dirname, "public")));
+
 // ==============================================================================
 
 
 // ==============================================================================
 // ROUTER
-require("./app/routing/apiRouters.js")(app);
-require("./app/routing/htmlRouters.js")(app);
+require("./app/routing/apiRoutes.js")(app);
+require("./app/routing/htmlRoutes.js")(app);
 // ==============================================================================
 
 
